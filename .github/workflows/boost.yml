@@ -30,7 +30,6 @@ jobs:
           scan_timeout: ${{fromJSON(github.event.inputs.scan_params).scan_timeout}}
           scan_label: ${{fromJSON(github.event.inputs.scan_params).scan_label}}
           scan_path: ${{fromJSON(github.event.inputs.scan_params).scan_path}}
-          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -38,7 +37,6 @@ jobs:
           BOOST_GIT_MAIN_BRANCH: ${{fromJSON(github.event.inputs.scan_params).main_branch_name}}
           BOOST_GIT_PROJECT: ${{fromJSON(github.event.inputs.scan_params).repository}}
           BOOST_GIT_PULL_REQUEST: ${{fromJSON(github.event.inputs.scan_params).pull_request_id}}
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/dev-registry.git#vnb-test
 
   boost-scanner-boostsecurityio-codeql:
     if: github.event.inputs.job_name == 'boost-scanner-boostsecurityio-codeql'
@@ -59,7 +57,6 @@ jobs:
           scan_timeout: ${{fromJSON(github.event.inputs.scan_params).scan_timeout}}
           scan_label: ${{fromJSON(github.event.inputs.scan_params).scan_label}}
           scan_path: ${{fromJSON(github.event.inputs.scan_params).scan_path}}
-          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -70,7 +67,6 @@ jobs:
           CODEQL_LANGUAGE: ${{fromJSON(github.event.inputs.scan_params).CODEQL_LANGUAGE}}
           CODEQL_CREATE_ARGS: ${{fromJSON(github.event.inputs.scan_params).CODEQL_CREATE_ARGS}}
           CODEQL_ANALYZE_ARGS: ${{fromJSON(github.event.inputs.scan_params).CODEQL_ANALYZE_ARGS}}
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/dev-registry.git#vnb-test
 
   boost-scanner-boostsecurityio-semgrep:
     if: github.event.inputs.job_name == 'boost-scanner-boostsecurityio-semgrep'
@@ -91,7 +87,6 @@ jobs:
           scan_timeout: ${{fromJSON(github.event.inputs.scan_params).scan_timeout}}
           scan_label: ${{fromJSON(github.event.inputs.scan_params).scan_label}}
           scan_path: ${{fromJSON(github.event.inputs.scan_params).scan_path}}
-          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -100,7 +95,6 @@ jobs:
           BOOST_GIT_PROJECT: ${{fromJSON(github.event.inputs.scan_params).repository}}
           BOOST_GIT_PULL_REQUEST: ${{fromJSON(github.event.inputs.scan_params).pull_request_id}}
           SEMGREP_RULES: ${{fromJSON(github.event.inputs.scan_params).SEMGREP_RULES}}
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/dev-registry.git#vnb-test
 
   boost-scanner-boostsecurityio-semgrep-pro:
     if: github.event.inputs.job_name == 'boost-scanner-boostsecurityio-semgrep-pro'
@@ -121,7 +115,6 @@ jobs:
           scan_timeout: ${{fromJSON(github.event.inputs.scan_params).scan_timeout}}
           scan_label: ${{fromJSON(github.event.inputs.scan_params).scan_label}}
           scan_path: ${{fromJSON(github.event.inputs.scan_params).scan_path}}
-          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -131,7 +124,6 @@ jobs:
           BOOST_GIT_PULL_REQUEST: ${{fromJSON(github.event.inputs.scan_params).pull_request_id}}
           SEMGREP_RULES: ${{fromJSON(github.event.inputs.scan_params).SEMGREP_RULES}}
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/dev-registry.git#vnb-test
 
   boost-scanner-boostsecurityio-snyk-test:
     if: github.event.inputs.job_name == 'boost-scanner-boostsecurityio-snyk-test'
@@ -152,7 +144,6 @@ jobs:
           scan_timeout: ${{fromJSON(github.event.inputs.scan_params).scan_timeout}}
           scan_label: ${{fromJSON(github.event.inputs.scan_params).scan_label}}
           scan_path: ${{fromJSON(github.event.inputs.scan_params).scan_path}}
-          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -161,4 +152,3 @@ jobs:
           BOOST_GIT_PROJECT: ${{fromJSON(github.event.inputs.scan_params).repository}}
           BOOST_GIT_PULL_REQUEST: ${{fromJSON(github.event.inputs.scan_params).pull_request_id}}
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/dev-registry.git#vnb-test
