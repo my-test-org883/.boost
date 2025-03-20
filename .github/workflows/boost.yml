@@ -10,8 +10,6 @@ on:
         description: The scan parameters
         required: true
 
-permissions: {}
-
 jobs:
   boost-scanner:
     name: ${{fromJSON(github.event.inputs.scan_params).trigger_id}}
@@ -22,3 +20,4 @@ jobs:
         with:
           api_token: ${{secrets.BOOST_API_TOKEN}}
           trigger_id: ${{fromJSON(github.event.inputs.scan_params).trigger_id}}
+          api_endpoint: https://api.dev.boostsec.io
