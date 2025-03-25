@@ -10,8 +10,6 @@ on:
         description: The scan parameters
         required: true
 
-permissions: {}
-
 jobs:
   boost-scanner:
     name: ${{fromJSON(github.event.inputs.scan_params).trigger_id}}
