@@ -19,7 +19,7 @@ jobs:
           chmod +x /usr/local/bin/boost-advisor
       - name: Run boost-advisor
         env:
-          BOOST_API_KEY: ${{ secrets.BOOST_API_KEY }}
+          BOOST_API_KEY: ${{ secrets.BOOST_API_TOKEN }}
           BOOST_SCM_TOKEN: ${{ secrets.BOOST_ADV_GH_TOKEN }}
           BOOST_LLM_MODEL: ${{ vars.BOOST_LLM_MODEL }}
           BOOST_LLM_KEY: ${{ secrets.OPENAI_API_KEY }}
