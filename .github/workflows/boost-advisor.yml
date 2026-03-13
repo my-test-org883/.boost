@@ -31,6 +31,5 @@ jobs:
           BOOST_LLM_MODEL: ${{ secrets.BOOST_LLM_MODEL }}
           BOOST_LLM_KEY: ${{ secrets.OPENAI_API_KEY }}
           PAYLOAD: ${{ inputs.payload }}
-          RUST_LOG: trace
         run: |
           echo "$PAYLOAD" | boost-advisor -
