@@ -12,16 +12,9 @@ jobs:
   remediate:
     runs-on: ubuntu-latest
     steps:
-      - name: Test SCM token
-        env:
-          BOOST_SCM_TOKEN: ${{ secrets.BOOST_ADV_GH_TOKEN }}
-        run: |
-          curl -s -H "Authorization: Bearer $BOOST_SCM_TOKEN" \
-            https://api.github.com/repos/my-test-org883/the-algorithm \
-            | jq '{permissions, full_name}'
       - name: Download boost-advisor
         run: |
-          curl https://assets.build.boostsecurity.io/boost-advisor/linux/x86_64/0.1.0-rc.7/boost-advisor \
+          curl https://assets.build.boostsecurity.io/boost-advisor/linux/x86_64/0.1.0-rc.8/boost-advisor \
             -o /usr/local/bin/boost-advisor
           chmod +x /usr/local/bin/boost-advisor
       - name: Run boost-advisor
