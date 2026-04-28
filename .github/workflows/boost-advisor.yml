@@ -22,7 +22,7 @@ jobs:
           BOOST_API_KEY: ${{ secrets.BOOST_API_TOKEN }}
           BOOST_SCM_TOKEN: ${{ secrets.BOOST_ADV_GH_TOKEN }}
           BOOST_LLM_MODEL: ${{ secrets.BOOST_LLM_MODEL }}
-          BOOST_LLM_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BOOST_LLLM_KEY: ${{ secrets.OPENAI_API_KEY }}
           PAYLOAD: ${{ inputs.payload }}
         run: |
           echo "$PAYLOAD" | boost-advisor -
